@@ -1,6 +1,18 @@
 <?php
 namespace App\Models;
 
+use CodeIgniter\Model;
+class UserModel extends Model
+{
+    protected $table = 'users' ;
+    protected $primaryKey = 'id' ;
+    protected $validationRules = [
+        'email' => 'required' |valid_email
+        ];
+}
+
+use App\Models\Simple\XMLModel;
+
 /*
  * Mock travel destination data.
  * Note that we don't have to extend CodeIgniter's model for now
